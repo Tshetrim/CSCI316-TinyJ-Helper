@@ -1,0 +1,192 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		/*  Run the tasks to generate the solutions and compare the output files for TJ1, TJ2, and TJ3 
+			To run a task:
+			1. Open the VS Code Command Palette by pressing Ctrl + Shift + P 
+			2. type Tasks: Run Task 
+			3. select the task you want to run 
+			4. press enter
+		
+			Some Options: 
+		   -"panel": "new" <- if you want ta new task run to be in a new terminal rather than the same one inside presentation option 
+		*/
+
+		// uncomment these for individual TJ1 tasks as label notes but leave them uncommented to unclutter the task list
+		/* {
+			"label": "TJ1 - Compare Output Files",
+			"type": "shell",
+			"command": "code --diff ./my-sol-tj1/${input:fileNumber}.out ./actual-sol-tj1/${input:fileNumber}.sol",
+			"problemMatcher": [],
+			"presentation": {
+				"reveal": "always",
+				"panel": "new"
+			}
+		},
+		{
+			"label": "Generate Actual Solution",
+			"type": "shell",
+			"command": "java -cp \"TJ1solclasses;.\" TJ1asn.TJ CS316ex${input:solutionNumber}.java ./actual-sol-tj1/${input:solutionNumber}.sol",
+			"problemMatcher": [],
+			"presentation": {
+				"reveal": "always",
+				"panel": "new"
+			}
+		},
+		{
+			"label": "Generate My Solution",
+			"type": "shell",
+			"command": "java -cp . TJ1asn.TJ CS316ex${input:solutionNumber}.java ./my-sol-tj1/${input:solutionNumber}.out",
+			"problemMatcher": [],
+			"presentation": {
+				"reveal": "always",
+				"panel": "new"
+			}
+		},
+		{
+			"label": "TJ1 - Generate All Solutions",
+			"type": "shell",
+			"command": "javac -cp . TJ1asn/Parser.java && java -cp \"TJ1solclasses;.\" TJ1asn.TJ CS316ex${input:solutionNumber}.java ./actual-sol-tj1/${input:solutionNumber}.sol && java -cp . TJ1asn.TJ CS316ex${input:solutionNumber}.java ./my-sol-tj1/${input:solutionNumber}.out",
+			"problemMatcher": [],
+			"presentation": {
+				"reveal": "always",
+				"panel": "new"
+			}
+		},
+		*/
+		//this is the only task you really need to run for 99% of TJ1 other than the generate and comapre solutions
+		{
+			"label": "TJ1 - Generate All Solutions and Compare Output Files",
+			"type": "shell",
+			"command": "javac -cp . TJ1asn/Parser.java && java -cp \"TJ1solclasses;.\" TJ1asn.TJ CS316ex${input:solutionNumber}.java ./actual-sol-tj1/${input:solutionNumber}.sol && java -cp . TJ1asn.TJ CS316ex${input:solutionNumber}.java ./my-sol-tj1/${input:solutionNumber}.out && code --diff ./my-sol-tj1/${input:solutionNumber}.out ./actual-sol-tj1/${input:solutionNumber}.sol",
+			"problemMatcher": [],
+			"presentation": {
+				"reveal": "always",
+				"panel": "shared"
+			}
+		},
+		// ----------------------------------------------------- ALL ABOVE IS FOR TJ1------------ ALL BELOW IS FOR TJ2 ------------------------------
+
+		// uncomment these for individual TJ2 tasks their label notes but leave them uncommented to unclutter the task list
+		/*
+		{
+		    "label": "TJ2 - Compare Output Files",
+		    "type": "shell",
+		    "command": "code --diff ./my-sol-tj2/${input:fileNumber}.out ./actual-sol-tj2/${input:fileNumber}.sol",
+		    "problemMatcher": [],
+		    "presentation": {
+		        "reveal": "always",
+		        "panel": "new"
+		    }
+		},
+		{
+		    "label": "TJ2 - Generate All Solutions ",
+		    "type": "shell",
+		    "command": "javac -cp . TJasn/ParserAndTranslator.java && java -cp . TJasn.TJ CS316ex${input:solutionNumber}.java ./my-sol-tj2/${input:solutionNumber}.out && java -cp \"TJsolclasses;.\" TJasn.TJ CS316ex${input:solutionNumber}.java ./actual-sol-tj2/${input:solutionNumber}.sol",
+		    "problemMatcher": [],
+		    "presentation": {
+		        "reveal": "always",
+		        "panel": "new"
+		    }
+		 },
+		*/
+
+		// Helper to compare the solution output of TJ1 to TJ2 to see the difference in what we add in TJ2 vs TJ1
+		{
+			"label": "TJ2 to TJ1 - Compare Actual Output Files",
+			"type": "shell",
+			"command": "code --diff ./actual-sol-tj1/${input:fileNumber}.sol ./actual-sol-tj2/${input:fileNumber}.sol",
+			"problemMatcher": [],
+			"presentation": {
+				"reveal": "always",
+				"panel": "shared"
+			}
+		},
+		// Generates all solutions but allows you to pick the options in the CLI (this gets super repetitive so see below task to run the default options)
+		{
+			"label": "TJ2 - Generate All Solutions",
+			"type": "shell",
+			"command": "javac -cp . TJasn/ParserAndTranslator.java && java -cp . TJasn.TJ CS316ex${input:solutionNumber}.java ./my-sol-tj2/${input:solutionNumber}.out && java -cp \"TJsolclasses;.\" TJasn.TJ CS316ex${input:solutionNumber}.java ./actual-sol-tj2/${input:solutionNumber}.sol",
+			"problemMatcher": [],
+			"presentation": {
+				"reveal": "always",
+				"panel": "shared"
+			}
+		},
+		// Use this for 99% of TJ2 to generate all solutions and compare the output files with default task options accepted automatically
+		{
+			"label": "TJ2 Default - Generate All Solutions and Compare Output Files",
+			"type": "shell",
+			"command": "javac -cp . TJasn/ParserAndTranslator.java && powershell -ExecutionPolicy Bypass -File .vscode/run_tj2_default_accept_mine.ps1 CS316ex${input:solutionNumber}.java ./my-sol-tj2/${input:solutionNumber}.out && powershell -ExecutionPolicy Bypass -File .vscode/run_tj2_default_accept_actual.ps1 CS316ex${input:solutionNumber}.java ./actual-sol-tj2/${input:solutionNumber}.sol && code --diff ./my-sol-tj2/${input:solutionNumber}.out ./actual-sol-tj2/${input:solutionNumber}.sol",
+			"problemMatcher": [],
+			"presentation": {
+				"reveal": "always",
+				"panel": "shared"
+			}
+		},
+		// ----------------------------------------------------- ALL ABOVE IS FOR TJ2------------ ALL BELOW IS FOR TJ3 ------------------------------
+		{
+			"label": "TJ3 - Run a input example",
+			"type": "shell",
+			"command": "java -cp . TJasn.TJ CS316ex${input:fileNumber}.java ./my-tj3-log/${input:fileNumber}.out",
+			"problemMatcher": [],
+			"presentation": {
+				"reveal": "always",
+				"panel": "shared"
+			}
+		},
+		// {
+		// 	"label": "TJ3 Default - Run a input example",
+		// 	"type": "shell",
+		// 	"command": " powershell -ExecutionPolicy Bypass -File .vscode/run_tj3_default.ps1 CS316ex${input:fileNumber}.java ./my-tj3-log/${input:fileNumber}.out",
+		// 	"problemMatcher": [],
+		// 	"presentation": {
+		// 		"reveal": "always",
+		// 		"panel": "shared"
+		// 	}
+		// },
+		{
+			"label": "TJ3 Java Actual - Compile and Run Java File",
+			"type": "shell",
+			"command": "javac -d ./javac-compiled-ex-files CS316ex${input:fileNumber}.java && java -cp ./javac-compiled-ex-files CS316ex${input:fileNumber}",
+			"problemMatcher": [],
+			"presentation": {
+				"reveal": "always",
+				"panel": "new"
+			}
+		},
+		{
+			"label": "TJ3 Prof Soln - Compile and Run Java File",
+			"type": "shell",
+			"command": "java -cp \"TJsolclasses;.\" TJasn.TJ CS316ex${input:fileNumber}.java ./actual-tj3-log/${input:fileNumber}.sol" ,
+			"problemMatcher": [],
+			"presentation": {
+				"reveal": "always",
+				"panel": "new"
+			}
+			
+		},
+		{
+			"label": "TJ3 DIFF - Compare Output Files",
+			"type": "shell",
+			"command": "code --diff ./my-tj3-log/${input:fileNumber}.out ./actual-tj3-log/${input:fileNumber}.sol " ,
+			"problemMatcher": [],
+			"presentation": {
+				"reveal": "always",
+				"panel": "shared"
+			}
+		}
+	],
+	"inputs": [
+		{
+			"id": "fileNumber",
+			"description": "Enter the file number:",
+			"type": "promptString"
+		},
+		{
+			"id": "solutionNumber",
+			"description": "Enter the solution number:",
+			"type": "promptString"
+		}
+	]
+}
