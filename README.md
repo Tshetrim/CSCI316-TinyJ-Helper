@@ -14,9 +14,10 @@ generate_and_Compare_solutions.sh -> shell command for TJ1 to automate diff chec
 .vscode -> folder that contains all components above
 
 Requirements: 
-Windows
-VS Code -> IDE 
-Git Bash -> allows us to use Unix-like commands and tools on Windows that translate 1 to 1 to Euclid
+
+	Windows
+	VS Code -> IDE 
+	Git Bash -> allows us to use Unix-like commands and tools on Windows that translate 1 to 1 to Euclid
 
 Initialization: 
 1. Make sure code is in your system path if not, add it -> https://code.visualstudio.com/docs/editor/command-line#_launching-from-command-line
