@@ -8,10 +8,10 @@ Table of Contents:
 4. Submission Helper 
 
 Files:
-tasks.json -> allow us to define tasks to use through VSCode
-3x run_tj[x]_default__.ps1 -> powershell commands to automate accepting defaults when running java files 
-generate_and_Compare_solutions.sh -> shell command for TJ1 to automate diff checkign for all files 0-15
-.vscode -> folder that contains all components above
+- tasks.json -> allow us to define tasks to use through VSCode
+- run_tj[x]_default__.ps1 -> 3 powershell commands to automate accepting defaults when running java files for TJ2+TJ3
+- generate_and_Compare_solutions.sh -> shell command for TJ1 to automate diff checkign for all files 0-15
+- .vscode -> folder that contains all components above
 
 Requirements: 
 
