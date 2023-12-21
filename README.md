@@ -1,25 +1,25 @@
 This is a helper tool to help you to generate the solutions and compare the output files for TJ1, TJ2, and TJ3.
 This is only if you decide to work on your home computer and use VSCode (which I highly recommend)
 
-Table of Contents: 
+**Table of Contents:** 
 1. Requirements
 2. Initialization
 3. Run Tasks
 4. Submission Helper 
 
-Files:
+**Files:**
 - tasks.json -> allow us to define tasks to use through VSCode
 - run_tj[x]_default__.ps1 -> 3 powershell commands to automate accepting defaults when running java files for TJ2+TJ3
 - generate_and_Compare_solutions.sh -> shell command for TJ1 to automate diff checkign for all files 0-15
 - .vscode -> folder that contains all components above
 
-Requirements: 
+**Requirements:** 
 
 	Windows
 	VS Code -> IDE 
 	Git Bash -> allows us to use Unix-like commands and tools on Windows that translate 1 to 1 to Euclid
 
-Initialization: 
+**Initialization:** 
 1. Make sure code is in your system path if not, add it -> https://code.visualstudio.com/docs/editor/command-line#_launching-from-command-line
 	- test this by navigating to the root folder of this project in the terminal and typing code .   (this should open the project in VS Code)
 	- note this is needed because we open diff using vscode which is a much nicer and easier to read version of diff than the default one in the terminal
@@ -43,7 +43,8 @@ To run a task:
 ![image](https://github.com/Tshetrim/CSCI316-TinyJ-Helper/assets/49722313/e0ff5664-9030-44df-a8f8-778d324f8f2a)
 
 
-The Main Tasks you should run are already uncommented in tasks.json and also listed below: 
+
+**The Main Tasks you should run are already uncommented in tasks.json and also listed below:** 
 
 For TJ1: 
 1. Create actual-sol-tj1 and my-sol-tj1 folders in root  -> this is where the output files will be stored when you run the tasks
@@ -71,11 +72,12 @@ For TJ3:
 ![image](https://github.com/Tshetrim/CSCI316-TinyJ-Helper/assets/49722313/bf55c156-8caf-4e84-bdff-17bcdfed31a2)
 
 
-Some options you can change in tasks.json:: 
--"panel": "new" <- if you want ta new task run to be in a new terminal rather than the same one inside presentation option 
+Some options you can change in tasks.json:
+- "panel": "new" <- if you want ta new task run to be in a new terminal rather than the same one inside presentation option 
 
 
-Submission: 
+
+**Submission:**
 
 After Uploading relevant file to Euclid, to test in Euclid Terminal:
 
