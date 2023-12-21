@@ -1,5 +1,5 @@
-This is a helper tool to help you to generate the solutions and compare the output files for TJ1, TJ2, and TJ3.
-This is only if you decide to work on your home computer and use VSCode (which I highly recommend)
+This is a helper tool with VSCode Task.json scripts, powershell scripts, and shell scripts for automating compilation and diff checking process TJ1, TJ2, and TJ3.
+This is only relevant if you decide to work on your home computer and are using VSCode as your IDE
 
 **Table of Contents:** 
 1. Requirements
