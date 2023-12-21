@@ -21,10 +21,10 @@ Requirements:
 
 Initialization: 
 1. Make sure code is in your system path if not, add it -> https://code.visualstudio.com/docs/editor/command-line#_launching-from-command-line
-   -- test this by navigating to the root folder of this project in the terminal and typing code .   (this should open the project in VS Code)
-   -- note this is needed because we open diff using vscode which is a much nicer and easier to read version of diff than the default one in the terminal
+	- test this by navigating to the root folder of this project in the terminal and typing code .   (this should open the project in VS Code)
+	- note this is needed because we open diff using vscode which is a much nicer and easier to read version of diff than the default one in the terminal
 2. Download GitBash and set as default terminal for VSCode Terminal  -> https://code.visualstudio.com/docs/terminal/profiles 
-3. SCP download the TJ1/TJ2/TJ3 folders from Euclid to your local machine - follow steps in Prof's docs (just the tj1 if you're only doing tj1, etc)
+3. Download the TJ1/TJ2/TJ3 folders from Euclid to your local machine - follow steps in Prof's docs (just the tj1 if you're only doing tj1, etc)
 4. Copy paste this .vscode folder into the root folder of your project (the folder that will contain TJ1asn, TJ2asn, TJ3asn, TJ1solclasses, TJ2solclasses, TJ3solclasses, etc)
 
 Folder Structure Should Look Like This:
