@@ -1,4 +1,4 @@
-This is a guide to help you run the tasks in tasks.json to generate the solutions and compare the output files for TJ1, TJ2, and TJ3
+This is a helper tool to help you to generate the solutions and compare the output files for TJ1, TJ2, and TJ3.
 This is only if you decide to work on your home computer and use VSCode (which I highly recommend)
 
 Table of Contents: 
